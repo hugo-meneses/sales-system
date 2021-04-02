@@ -31,7 +31,7 @@ Bulma
 ## Issue não respondida:
 - Criar uma Job (Nível Avançado)
 
-##Issues respondidas:
+## Issues respondidas:
 - Organizar os Models em uma pasta (Nível Básico)
 - Adicionar Docker ao projeto (Nível Intermediário)
 - Criar um command para inserir um produto via terminal (Nível Intermediário)
