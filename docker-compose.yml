@@ -1,0 +1,23 @@
+version: '3'
+services:
+
+  api:
+    image: metawesome/alpine-nginx-php-oci8
+    container_name: sale-system
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/app 
+         
+  db:
+      image: mysql:latest
+      container_name: sale-system-db
+      ports:
+          - "3306:3306"
+      environment:
+        MYSQL_DATABASE: sale-system
+        MYSQL_ROOT_PASSWORD: " "
+        volumes:
+            db-sale:/var/lib/mysql
+   
+    

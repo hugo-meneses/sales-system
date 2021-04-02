@@ -1,11 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Product;
+
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\ProductRequest;
+use App\Services\ProductService;
 
 class ProductController extends Controller
 {
+    protected $productService;
+
+    public function __construct(ProductService $productService)
+    {
+        $this->productService = $productService;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -26,8 +36,14 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
+        $validator = $request->validated();
+                
+        if (empty($validator)) {
+          return response()->json([ 'error'=>'Dados inválidos'], 422);
+        }
+
         $product = new Product;
         $product->create($request->all());
         return Response()->json('Produto cadastrado!', 201);
@@ -41,7 +57,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return Product::find($id);
+        return $this->productService->show($id);
     }
 
 
@@ -52,8 +68,14 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
+        $validator = $request->validated();
+                
+        if (empty($validator)) {
+          return response()->json([ 'error'=>'Dados inválidos'], 422);
+        }
+
         $product = Product::find($id);
         $product->name = $request->name;
         $product->reference = $request->reference;
