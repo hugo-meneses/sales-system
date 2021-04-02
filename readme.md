@@ -27,4 +27,15 @@ Bulma
 - Não é obrigatrio responder todas as atividades, quanto mais atividades você responder, melhor será avaliado.
 - Após ter respondido as issues, disponibilize o projeto no seu github contendo essas atualizações.
 - Informe-nos quais issues você realizou.
+
+## Issue não respondida:
+- Criar uma Job (Nível Avançado)
+
+##Issues respondidas:
+- Organizar os Models em uma pasta (Nível Básico)
+- Adicionar Docker ao projeto (Nível Intermediário)
+- Criar um command para inserir um produto via terminal (Nível Intermediário)
+- Implementar FormRequest nos Controllers (Nível Básico) 
+- Implementar o conceito de Repositories no projeto (Nível Básico)
+
 # sales-system
