@@ -27,3 +27,4 @@ Bulma
 - Não é obrigatrio responder todas as atividades, quanto mais atividades você responder, melhor será avaliado.
 - Após ter respondido as issues, disponibilize o projeto no seu github contendo essas atualizações.
 - Informe-nos quais issues você realizou.
+# sales-system

@@ -27,7 +27,7 @@ class SaleController extends Controller
      */
     public function index(Request $request)
     {
-        $result = $this->saleService->getAll();
+        $result = $this->saleService->getAll(); 
         
         if(isset($request->per_page))
             $per_page = $request->per_page;
